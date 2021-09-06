@@ -8,7 +8,7 @@ Clone this repo into your home directory (or symlink it) as a folder called **.p
 
 ```
 # Auto-load bash profile utils.
-if [ -x ~/.profile.d/autoload.sh ]; then source ~/.profile.d/autoload.sh ]; fi
+if [ -x ~/.profile.d/autoload.sh ]; then source ~/.profile.d/autoload.sh; fi
 ```
 
 This will tell bash to run the [main autoloader script](https://github.com/aaronsenecal/bash-profile-utils/blob/master/autoload.sh), which will load core utilities, and then everything currently in the "autoload" directory at the repo root. You can organize your functions and exports into individual files within this directory without having to worry about sourcing each one.
