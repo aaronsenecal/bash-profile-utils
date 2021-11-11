@@ -55,7 +55,7 @@ function cdrepo {
     fi
     for git_dir in $(find $search -type d -name .git 2>/dev/null | xargs); do
         # TODO: this should be refactored to work with multiple upstreams.
-        local reponame="$(git --git-dir="$git_dir" remote -v | grep 'origin' | sed -n 's/.*:\(.*\)\.git.*/\1/p' | sort | uniq | head -1 | tr '[:upper:]' '[:lower:]')";
+        local reponame="$(git --git-dir="$git_dir" remote -v | grep 'origin' | sed -n 's/.*:\([^\.]*\).*/\1/p' | sort | uniq | head -1 | tr '[:upper:]' '[:lower:]')";
         if [ "$repo" = "$reponame" ]; then
             local repo_path="$git_dir/../";
             
@@ -96,7 +96,7 @@ function cdrepo-discover {
     fi
     search="$(realpath "$search")";
     for git_dir in $(find $search -type d -name .git 2>/dev/null | xargs); do
-        local reponame="$(git --git-dir="$git_dir" remote -v | grep 'origin' | sed -n 's/.*:\(.*\)\.git.*/\1/p' | sort | uniq | head -1 | tr '[:upper:]' '[:lower:]')";
+        local reponame="$(git --git-dir="$git_dir" remote -v | grep 'origin' | sed -n 's/.*:\([^\.]*\).*/\1/p' | sort | uniq | head -1 | tr '[:upper:]' '[:lower:]')";
         if [ ! -z "$reponame" ]; then
             local cached_repo_name="$(echo "$reponame" | sed 's,/,:,g')";
             local repo_path="$git_dir/../";
