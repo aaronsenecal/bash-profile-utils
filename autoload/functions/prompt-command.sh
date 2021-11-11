@@ -15,7 +15,7 @@ function prompt_command {
         local git_status="$(git --git-dir $git_root/.git status)";
         local git_branch="$(echo "$git_status" | sed -n 's/On branch \(.*\)/\1/p')";
         local git_upstream_relative="$(echo "$git_status" | sed -n "s/Your branch is \([^']*\) '.*/\1/p")";
-        local git_repo_name="$(git  --git-dir $git_root/.git remote -v | grep '^origin' | awk '{print $2}' | sort | uniq | sed -n 's/.*:\(.*\)\.git/\1/p')";
+        local git_repo_name="$(git  --git-dir $git_root/.git remote -v | grep '^origin' | awk '{print $2}' | sort | uniq | sed -n 's/.*:\([^\.]*\).*/\1/p')";
         local git_color='yellow';
 
         if [ -z "$git_branch" ]; then
