@@ -1,6 +1,6 @@
 # Aaron's Bash Profile Utilities
 
-I use these utilities with my personal bash profile. Feel free to try them in yours! Please usese these utilities only at your own risk, and only with a full understanding of what they do and how they work. They are presented as-is, without warranty.
+I use these utilities with my personal bash profile. Feel free to try them in yours! Please use these utilities only at your own risk, and only with a full understanding of what they do and how they work. They are presented as-is, without warranty.
 
 ## To Install
 
